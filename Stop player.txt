@@ -1,0 +1,5 @@
+ps -ef | grep python
+
+find pid for job; second column
+
+sudo kill <pid>
