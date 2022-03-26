@@ -1,3 +1,6 @@
+## This is currently a work in-progress to add functionality to the original project. 
+## See below for links to the original blog and YouTube video which contains instructions on how to setup the original project.
+
 <p align="center"><img src="./recordplayerimage.png" width="800"></p>
 
 ## Modern Day Record Player
