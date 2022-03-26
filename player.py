@@ -1,13 +1,20 @@
 #!/usr/bin/env python
+
+# DO NOT SHARE THESE VALUES
+# Data stored in file called config.py
+#    DEVICE_ID="YOUR_DEVICE_ID"
+#    CLIENT_ID="YOUR_CLIENT_ID"
+#    CLIENT_SECRET="YOUR_CLIENT_SECRET"
+from config import DEVICE_ID
+from config import CLIENT_ID
+from config import CLIENT_SECRET
+
+
 from mfrc522 import SimpleMFRC522
 import RPi.GPIO as GPIO
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from time import sleep
-
-DEVICE_ID="98bb0735e28656bac098d927d410c3138a4b5bca"
-CLIENT_ID="624eed6c66314802b1a2eda4c251889e"
-CLIENT_SECRET="77dc781d293d4b52ac43c475c9912be2"
 
 SongListFile = 'SongList.txt'
 SongList = []
@@ -16,7 +23,8 @@ SongList = []
 def load_song_list():
     with open(SongListFile, "r") as f:
         for line in f:
-            SongList.append([x for x in line.replace("\n", "").split(",")])
+            if not line.startswith("#"):
+                SongList.append([x for x in line.replace("\n", "").split(",")])
     f.close()
 
 # Find the song assocated with the scanned RFID
@@ -39,7 +47,7 @@ def find_song(rfid):
                 found_track = 1
                 break
 
-# If RFID tag is not found, play this track (R.E.M. - It's the End of the World as We Know It)
+# If RFID tag is not found, play R.E.M. - It's the End of the World as We Know It
     if found_track == 0:
         sp.start_playback(device_id=DEVICE_ID, uris=['spotify:track:2oSpQ7QtIKTNFfA08Cy0ku'])
         sleep(2)            
