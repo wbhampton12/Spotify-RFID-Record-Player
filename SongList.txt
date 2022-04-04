@@ -1,7 +1,14 @@
-# RFID,Track/Album_ID,Type
+# Format for data:
+#    <Tag RFID>,<spotify context uri or spotify track uris>,<Type>
+#
+# Types:
+#	Track - covers individual track
+#	Album - covers album, artist or playlist
+#
 # The Bangles - Hazy Shade of Winter
-1047326530359,7EmsauPLjAy9XMNELaHBZa,Track
+123526708963,7EmsauPLjAy9XMNELaHBZa,Track
 # Joy Division - Disorder
-291058495942,5fbQCQt91LsVgXusFS0CCD,Track
-# 
-222222222222,0JGOiO34nwfUdDrD612dOp,Album
+673265745504,5fbQCQt91LsVgXusFS0CCD,Track
+# Midnight Oil - 10,9,8,7,6,5,4,3,2,1
+123509931744,1iWFOvjt1FQfkMJrZxtwiF,Album
+
